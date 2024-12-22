@@ -31,6 +31,7 @@ Modeling Approaches:
 Linear Regression
 Log-transformed Regression
 K-means Clustering
+
 🚀 Key Findings
 
 Hours Studied: A positive and significant correlation with exam scores.
