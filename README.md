@@ -10,36 +10,40 @@ This project seeks to uncover the answers to these questions by analyzing variou
 
 The dataset, sourced from Kaggle, includes numerous factors that could influence student performance. Key variables analyzed include:
 
-Study habits: Hours studied, tutoring sessions attended
+-Study habits: Hours studied, tutoring sessions attended
 
-Lifestyle factors: Sleep hours, physical activity
+-Lifestyle factors: Sleep hours, physical activity
 
-Family dynamics: Parental involvement, education level, family income
+-Family dynamics: Parental involvement, education level, family income
 
-School characteristics: Teacher quality, school type, school distance
+-School characteristics: Teacher quality, school type, school distance
 
-Demographics: Gender, learning disabilities
+-Demographics: Gender, learning disabilities
 
-Social environment: Peer influence, access to resources, extracurricular activities
+-Social environment: Peer influence, access to resources, extracurricular activities
 
-Exam outcomes: Final exam score
+-Exam outcomes: Final exam score
 
 🔬 Methodology
 
 We used a combination of exploratory data analysis (EDA) and machine learning techniques to uncover relationships between these variables and exam scores. Key steps included:
 
 Data Cleaning and Preprocessing:
-Handled missing values and outliers.
-Normalized and encoded categorical variables.
+-Handled missing values and outliers.
+
+-Normalized and encoded categorical variables.
 
 Exploratory Data Analysis (EDA):
-Visualized data distributions and correlations.
-Conducted hypothesis testing on key variables.
+-Visualized data distributions and correlations.
+
+-Conducted hypothesis testing on key variables.
 
 Modeling Approaches:
-Linear Regression
-Log-transformed Regression
-K-means Clustering
+-Linear Regression
+
+-Log-transformed Regression
+
+-K-means Clustering
 
 🚀 Key Findings
 
