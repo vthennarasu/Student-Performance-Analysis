@@ -1,10 +1,39 @@
-# Student-Performance-Analysis
+Student Performance Analysis Project
 
-Background
-As motivated students, we are constantly striving for bigger and better academic results, altering our lives in different ways to achieve this. Whether it be studying more, sleeping more, or a combination of numerous other factors, we never know what is truly responsible for earning us that beloved A. However, how do we know which factors truly have the greatest impact on our test scores? Are these factors ones we can control and alter for our benefit? Or are they forever unchangeable and out of reach? We hope to uncover the sought-after answers to these questions through our analysis.
+📚 Background
 
-Dataset Details
-We obtained a dataset outlining student performance factors from kaggle, highlighting numerous factors that could influence a student’s exam score performance, including: hours studied, attendance, parental involvement, access to resources, extracurricular activities, hours of sleep, previous scores, motivation level, internet access, tutoring sessions attended, family income, teacher quality, school type, peer influence, physical activity, learning disabilities, parental education level, school distance from home, gender, final exam score.
+As motivated students, we are constantly striving for better academic results, altering various aspects of our lives to achieve this. But how do we know which factors truly have the greatest impact on our test scores? Are these factors controllable, or are they beyond our reach?
 
-Conclusion
-An unexpected result from our analysis was that sleep hours did not have a significant impact on exam scores. The best-performing model was a log-transformed regression, which achieved the highest R2 value and the lowest residuals. Both linear regression and k-means clustering revealed a predominantly positive relationship between hours studied and exam scores. Our findings ultimately suggest that students have better control over variables that significantly influence their exam scores, and it is within their responsibility to leverage these factors in order to maximize their performance. 
+This project seeks to uncover the answers to these questions by analyzing various factors that influence students' exam scores. Through data-driven insights, we aim to identify actionable strategies students can adopt to optimize their academic performance.
+
+📊 Dataset Details
+
+The dataset, sourced from Kaggle, includes numerous factors that could influence student performance. Key variables analyzed include:
+
+Study habits: Hours studied, tutoring sessions attended
+Lifestyle factors: Sleep hours, physical activity
+Family dynamics: Parental involvement, education level, family income
+School characteristics: Teacher quality, school type, school distance
+Demographics: Gender, learning disabilities
+Social environment: Peer influence, access to resources, extracurricular activities
+Exam outcomes: Final exam score
+🔬 Methodology
+
+We used a combination of exploratory data analysis (EDA) and machine learning techniques to uncover relationships between these variables and exam scores. Key steps included:
+
+Data Cleaning and Preprocessing:
+Handled missing values and outliers.
+Normalized and encoded categorical variables.
+Exploratory Data Analysis (EDA):
+Visualized data distributions and correlations.
+Conducted hypothesis testing on key variables.
+Modeling Approaches:
+Linear Regression
+Log-transformed Regression
+K-means Clustering
+🚀 Key Findings
+
+Hours Studied: A positive and significant correlation with exam scores.
+Sleep Hours: Surprisingly, no strong relationship with exam performance.
+Model Performance: Log-transformed regression yielded the best fit, with a high R^2 value and minimal residuals.
+Actionable Insights: Students can focus on controllable factors like study habits and tutoring to boost their performance.
