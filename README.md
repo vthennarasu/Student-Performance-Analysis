@@ -4,7 +4,7 @@ Student Performance Analysis Project
 
 As motivated students, we are constantly striving for better academic results, altering various aspects of our lives to achieve this. But how do we know which factors truly have the greatest impact on our test scores? Are these factors controllable, or are they beyond our reach?
 
-This project seeks to uncover the answers to these questions by analyzing various factors that influence students' exam scores. Through data-driven insights, we aim to identify actionable strategies students can adopt to optimize their academic performance.
+This project seeks to uncover the answers to these questions by analyzing various factors that influence students' exam scores. Using R to do data-driven insights, we aim to identify actionable strategies students can adopt to optimize their academic performance.
 
 📊 Dataset Details
 
