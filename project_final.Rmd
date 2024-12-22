@@ -1,0 +1,67 @@
+---
+title: "STA 141A Project"
+author: "Janna Fasheh, Preethika Balakumar, Varsha Thennarasu"
+date: "2024-12-04"
+output: pdf_document
+---
+
+```{r}
+# COMMENT THE CODE!!
+library(dplyr)
+library(ggplot2)
+df <- read.csv("~/Downloads/StudentPerformanceFactors.csv")
+df <- df %>%
+  select(-Motivation_Level) %>%
+  select(-Access_to_Resources) %>%
+  filter(Internet_Access == "Yes") %>%
+  filter(School_Type == "Public") %>%
+  filter(Learning_Disabilities == "No") %>%
+  filter(Parental_Involvement != "Other") %>%
+  filter(Family_Income != "Other") %>%
+  filter(Teacher_Quality != "Other") %>%
+  filter(Teacher_Quality != "") %>%
+  filter(Peer_Influence != "Other") %>%
+  filter(Distance_from_Home != "Other") %>%
+  filter(Distance_from_Home != "") %>%
+  filter(Parental_Education_Level != "") %>%
+  filter(Extracurricular_Activities != "")
+df$Parental_Involvement <- factor(df$Parental_Involvement, levels = c("Medium", "Low", "High"))
+df$Family_Income <- factor(df$Family_Income, levels = c("Medium", "Low", "High"))
+df$Teacher_Quality <- factor(df$Teacher_Quality, levels = c("Medium", "Low", "High"))
+df$Peer_Influence <- factor(df$Peer_Influence, levels = c("Neutral", "Negative", "Positive"))
+df$Distance_from_Home <- factor(df$Distance_from_Home, levels = c("Moderate", "Far", "Near"))
+df$Parental_Education_Level <- factor(df$Parental_Education_Level, levels = c("Postgraduate", "High School", "College"))
+df$Extracurricular_Activities <- ifelse(df$Extracurricular_Activities == "Yes", 1, 0)
+df$Gender <- ifelse(df$Gender == "Female", 1, 0)
+summary(df)
+
+full <- lm(Exam_Score ~ Hours_Studied + Attendance + Parental_Involvement + Extracurricular_Activities + Sleep_Hours + Previous_Scores + Tutoring_Sessions + Family_Income + Teacher_Quality + Peer_Influence + Physical_Activity + Parental_Education_Level + Distance_from_Home + Gender, data = df)
+summary(full)
+sig_model <- lm(Exam_Score ~ Sleep_Hours + Teacher_Quality + Distance_from_Home + Gender, data = df)
+summary(sig_model)
+full_wo_sig <- lm(Exam_Score ~ Hours_Studied + Attendance + Parental_Involvement + Extracurricular_Activities + Previous_Scores + Tutoring_Sessions + Family_Income + Peer_Influence + Physical_Activity + Parental_Education_Level, data = df)
+summary(full_wo_sig)
+log_full <- lm(log(Exam_Score) ~ Hours_Studied + Attendance + Parental_Involvement + Extracurricular_Activities + Sleep_Hours + Previous_Scores + Tutoring_Sessions + Family_Income + Teacher_Quality + Peer_Influence + Physical_Activity + Parental_Education_Level + Distance_from_Home + Gender, data = df)
+summary(log_full)
+
+##CODE is from here:
+
+##model for variables in a student's control 
+var_in_control <- lm(Exam_Score ~ Hours_Studied + Attendance + Extracurricular_Activities + Sleep_Hours + Previous_Scores + Tutoring_Sessions + Physical_Activity, data = df)
+summary(var_in_control)
+##model for variables in a student's control 
+var_notin_control <- lm(Exam_Score ~  Parental_Involvement + Family_Income + Teacher_Quality + Peer_Influence + Parental_Education_Level + Distance_from_Home + Gender, data = df)
+summary(var_notin_control)
+
+## Histogram of Residuals
+## full model
+hist(resid(full), main = "Histogram of Residuals for Full Model", xlab = "Residuals")
+## significant model
+hist(resid(sig_model), main = "Histogram of Residuals for Significant Model", xlab = "Residuals")
+## full without significant model
+hist(resid(full_wo_sig), main = "Histogram of Residuals for Full model without Significant", xlab = "Residuals")
+## log transformed model 
+hist(resid(log_full), main = "Histogram of Residuals for Log-Transformed Model", xlab = "Residuals")
+
+```
+
