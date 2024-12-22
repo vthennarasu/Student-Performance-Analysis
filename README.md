@@ -29,16 +29,19 @@ The dataset, sourced from Kaggle, includes numerous factors that could influence
 We used a combination of exploratory data analysis (EDA) and machine learning techniques to uncover relationships between these variables and exam scores. Key steps included:
 
 Data Cleaning and Preprocessing:
+
 -Handled missing values and outliers.
 
 -Normalized and encoded categorical variables.
 
 Exploratory Data Analysis (EDA):
+
 -Visualized data distributions and correlations.
 
 -Conducted hypothesis testing on key variables.
 
 Modeling Approaches:
+
 -Linear Regression
 
 -Log-transformed Regression
